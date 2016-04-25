@@ -152,10 +152,13 @@ add_custom_command(TARGET iegenlib_t POST_BUILD
   COMMAND mkdir -p ../test_data/dotTest
   COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/set_relation/dotTest/*
               ../test_data/dotTest)
-add_custom_command(TARGET run_iegen_tests POST_BUILD
-  COMMAND mkdir -p ../test_data/cloogTest
-  COMMAND cp  ${CMAKE_CURRENT_SOURCE_DIR}/iegen/loopnest/cloogTest/*
-              ../test_data/cloogTest)
+
+## MMS something I was trying to add for loop_nest_test.cc.
+## Throwing a cmake warning because not a known target.
+#add_custom_command(TARGET run_iegen_tests POST_BUILD
+#  COMMAND mkdir -p ../test_data/cloogTest
+#  COMMAND cp  ${CMAKE_CURRENT_SOURCE_DIR}/iegen/loopnest/cloogTest/*
+#              ../test_data/cloogTest)
 
 ## add the test executable as a test in ctest
 add_test(iegenlib_unit_test iegenlib_t)

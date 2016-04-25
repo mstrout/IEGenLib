@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 2.8)
 project(IEGENLIB)
 
+## Needed for Policy CMP0042 is not set: MACOSX_RPATH is enabled by default.
+set(CMAKE_MACOSX_RPATH 1)
+
 ## Add a 'docs' target to build documentation.  (make docs)
 add_subdirectory(doc)
 
